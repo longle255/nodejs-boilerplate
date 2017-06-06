@@ -45,3 +45,4 @@ vendors
 yarn.lock
 SPHRS.note.txt
 .yo-rc.json
+config/local.json

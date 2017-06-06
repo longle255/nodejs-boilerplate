@@ -1,9 +1,8 @@
 'use strict';
-const Util = require('./Util');
 const Email = require('./Email');
 
-
 module.exports = {
-  Util: Util,
-  Email: Email
+  getJobs: function getJobs() {
+    return [['email', {}, Email]];
+  }
 };

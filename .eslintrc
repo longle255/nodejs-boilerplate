@@ -22,9 +22,11 @@
   "globals": {
     "_": true,
     "nconf": true,
+    "job": true,
     "log": true,
     "db": true,
     "authorizeRequest": true,
+    "jwtAuthenticated": true,
     "Services": true
   }
 }
