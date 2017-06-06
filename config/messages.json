@@ -1,0 +1,114 @@
+{
+  "errorMessages": {
+    "missingUserInfo": {
+      "code": "ERROR_MISSING_USER_INFO",
+      "status": 400,
+      "message": "Please enter email, username and password."
+    },
+    "missingClient": {
+      "code": "ERROR_MISSING_CLIENT",
+      "status": 400,
+      "message": "Missing client info"
+    },
+    "missingRedirectUrl": {
+      "code": "ERROR_MISSING_REDIRECT_URL",
+      "status": 400,
+      "message": "Missing redirectUrl"
+    },
+    "missingIdsToDelete": {
+      "code": "MISSING_IDS",
+      "status": 400,
+      "message": "Missing ids"
+    },
+    "loginFailed": {
+      "code": "ERROR_INVALID_CREDENTIALS",
+      "status": 401,
+      "message": "Invalid username, email or password"
+    },
+    "unauthorized": {
+      "code": "UNAUTHORIZED_REQUEST",
+      "status": 401,
+      "message": "Unauthorized request. Include access token to continue"
+    },
+    "forbidden": {
+      "code": "FORBIDDEN",
+      "status": 403,
+      "message": "Forbidden"
+    },
+    "wrongPassword": {
+      "code": "WRONG_PASSWORD",
+      "status": 400,
+      "message": "Password does not match"
+    },
+    "userNotExist": {
+      "code": "ERROR_INVALID_USER",
+      "status": 400,
+      "message": "This user does not exists"
+    },
+    "invalidSessionId": {
+      "code": "ERROR_INVALID_SESSIONID",
+      "status": 400,
+      "message": "This sessionId is invalid or being used"
+    },
+    "emailUserNameDuplicated": {
+      "code": "ERROR_DUPLICATED_EMAIL_OR_USERNAME",
+      "status": 400,
+      "message": "This email or username is/are already in use"
+    },
+    "invalidPasswordLength": {
+      "code": "ERROR_PASSWORD_LENGTH",
+      "status": 400,
+      "message": "Password length must be more than 6"
+    },
+    "invalidInfoType": {
+      "code": "ERROR_INFO_TYPE",
+      "status": 400,
+      "message": "The requested type is invalid"
+    },
+    "invalidRequest": {
+      "code": "ERROR_INVALID_REQUEST",
+      "status": 400,
+      "message": "The requested invalid. Missing parameter(s)"
+    },
+    "invalidUsername": {
+      "code": "ERROR_INVALID_USERNAME",
+      "status": 400,
+      "message": "Invalid username"
+    },
+    "tokenExpired": {
+      "code": "TOKEN_HAS_EXPIRED",
+      "status": 400,
+      "message": "The token has expired"
+    },
+    "userNotFound": {
+      "code": "ERROR_USER_NOT_FOUND",
+      "status": 400,
+      "message": "User not found"
+    },
+    "accountNotFound": {
+      "code": "ERROR_ACCOUNT_NOT_FOUND",
+      "status": 400,
+      "message": "Account not found"
+    },
+    "pageNotFound": {
+      "code": "ERROR_PAGE_NOT_FOUND",
+      "status": 400,
+      "message": "Page not found"
+    },
+    "emailNotFound": {
+      "code": "EMAIL_NOT_FOUND",
+      "status": 400,
+      "message": "Email does not exists"
+    },
+    "tokenNotFound": {
+      "code": "TOKEN_NOT_FOUND",
+      "status": 404,
+      "message": "Token not found"
+    },
+    "serverError": {
+      "code": "SERVER_ERROR",
+      "status": 500,
+      "message": "Server errors"
+    }
+  }
+}

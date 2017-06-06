@@ -1,0 +1,54 @@
+{
+
+  "specialization": {},
+  "middleware": {
+    "appsec": {
+      "priority": 110,
+      "module": {
+        "name": "lusca",
+        "arguments": [{
+          "csrf": false,
+          // "xframe": "SAMEORIGIN",
+          "xframe": false,
+          "p3p": false,
+          "csp": false
+        }]
+      }
+    },
+
+    "static": {
+      "module": {
+        "arguments": ["path:./.build"]
+      }
+    },
+
+    "router": {
+      "module": {
+        "arguments": [{
+          "directory": "path:./controllers"
+        }]
+      }
+    },
+
+    "Jwt": {
+      "enabled": true,
+      "priority": 113,
+      "route": "/api",
+      "module": {
+        "name": "path:./middlewares/Jwt.js"
+      }
+    },
+    "RequestLogger": {
+      "enabled": true,
+      "priority": 115,
+      "route": ["/api", "/web", "/auth"],
+      "module": {
+        "name": "path:./middlewares/RequestLogger.js"
+      }
+    },
+
+    "logger": {
+      "enabled": false
+    }
+  }
+}
