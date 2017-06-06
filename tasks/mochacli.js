@@ -13,7 +13,7 @@ module.exports = function mochacli(grunt) {
             'check-leaks': true,
             ui: 'bdd',
             reporter: 'spec',
-            globals: ['log', '_', 'Services', 'nconf', 'authorizeRequest', 'jwtAuthenticated']
+            globals: ['log', '_', 'Services', 'nconf', 'authorizeRequest', 'jwtAuthenticated', 'JWT_TOKEN', 'app']
         }
     };
 };

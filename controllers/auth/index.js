@@ -44,6 +44,7 @@ module.exports = function(router) {
         user.lastActivity = new Date();
         await user.save();
         return res.status(200).json({
+          status: 200,
           token: 'Bearer ' + token
         });
       } else {
@@ -65,7 +66,7 @@ module.exports = function(router) {
         return Services.Util.controllerCallback(res)(errorMessages.invalidUsername);
       }
 
-      if (req.body.password.length <= db.User.PASSWORD_MINIMUM_LENGHT) {
+      if (req.body.password.length < db.User.PASSWORD_MINIMUM_LENGHT) {
         return Services.Util.controllerCallback(res)(errorMessages.invalidPasswordLength);
       }
       let user = await db.User.create(req.body);
