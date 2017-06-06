@@ -12,7 +12,8 @@ module.exports = function mochacli(grunt) {
             timeout: 6000,
             'check-leaks': true,
             ui: 'bdd',
-            reporter: 'spec'
+            reporter: 'spec',
+            globals: ['log', '_', 'Services', 'nconf', 'authorizeRequest', 'jwtAuthenticated']
         }
     };
 };

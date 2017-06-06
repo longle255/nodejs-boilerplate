@@ -2,46 +2,34 @@
 
 'use strict';
 
+const request = require('supertest');
+const fs = require('fs');
+const dotenv = require('dotenv');
 
-var kraken = require('kraken-js'),
-    express = require('express'),
-    path = require('path'),
-    request = require('supertest');
+// Override config with test env
+const envConfig = dotenv.parse(fs.readFileSync('.env.test'));
+for (var k in envConfig) {
+  process.env[k] = envConfig[k];
+}
 
+require('dotenv').config({ silent: true });
 
-describe('index', function () {
+describe('index', function() {
+  var app, mock;
 
-    var app, mock;
+  beforeEach(function(done) {
+    app = require('../index');
+    app.on('start', done);
+    mock = app.listen(1337);
+  });
 
+  afterEach(function(done) {
+    mock.close(done);
+  });
 
-    beforeEach(function (done) {
-        app = express();
-        app.on('start', done);
-        app.use(kraken({
-            basedir: path.resolve(__dirname, '..')
-        }));
-
-        mock = app.listen(1337);
-
+  it('should have route name "index"', function(done) {
+    request(mock).get('/').expect(200).expect('Content-Type', /html/).expect(/"OK": true/).end(function(err, res) {
+      done(err);
     });
-
-
-    afterEach(function (done) {
-        mock.close(done);
-    });
-
-
-    it('should have model name "index"', function (done) {
-        request(mock)
-            .get('/')
-            .expect(200)
-            .expect('Content-Type', /html/)
-            
-                .expect(/"name": "index"/)
-            
-            .end(function (err, res) {
-                done(err);
-            });
-    });
-
+  });
 });

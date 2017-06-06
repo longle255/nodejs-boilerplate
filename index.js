@@ -12,8 +12,8 @@ let options, app;
 // Setup global utils
 global.log = Log.logger;
 global._ = _;
-global.nconf = nconf;
 global.Services = Services;
+global.nconf = nconf;
 
 nconf.argv().env()
   .file('messages', path.resolve(process.cwd(), './config/messages.json'));
